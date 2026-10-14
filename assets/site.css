@@ -119,10 +119,9 @@ section{padding-block:clamp(72px,10vw,136px)}
 .med a:hover .arr::after{color:var(--copper)}
 
 /* 院長 */
-.dir{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);min-height:560px;padding:0}
-.dir .ph{position:relative;min-height:420px}
-.dir .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 30%;filter:grayscale(.15) contrast(1.02)}
-.dir .tx{padding:clamp(56px,7vw,104px) var(--gut);display:flex;flex-direction:column;justify-content:center;max-width:680px}
+.dir{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:clamp(40px,6vw,88px);align-items:center;padding-inline:max(var(--gut),calc((100% - var(--wrap))/2 + var(--gut)))}
+.dir .ph img{width:100%;height:auto;filter:grayscale(.15) contrast(1.02)}
+.dir .tx{display:flex;flex-direction:column;justify-content:center;max-width:640px}
 .dir blockquote{margin:0 0 30px;font-family:var(--min);font-size:clamp(21px,2.3vw,29px);line-height:1.8;letter-spacing:.08em;font-weight:600}
 .dir p{font-size:15.5px;line-height:2.15;color:var(--fg-2);margin-bottom:28px}
 .dir .nm{font-size:13px;color:var(--fg-2);letter-spacing:.14em;margin-bottom:28px}
@@ -207,7 +206,7 @@ section{padding-block:clamp(72px,10vw,136px)}
   .band .wrap{grid-template-columns:1fr;gap:24px}
   .msg,.rehab,.acc,.fit .wrap,.ftr .top{grid-template-columns:1fr;gap:40px}
   .dir{grid-template-columns:1fr}
-  .dir .ph{min-height:0;aspect-ratio:4/3}
+  .dir .ph{max-width:440px}
   .med a{grid-template-columns:minmax(0,1fr) 40px;gap:12px 24px}
   .med h3{grid-column:1}
   .med p{grid-column:1}
