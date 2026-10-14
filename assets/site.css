@@ -9,9 +9,9 @@
   --line:#2d2c29;
   --copper:#c9875c;
   --copper-ink:#140d07;
-  --min:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
-  --jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  --num:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --jp:"M PLUS 1","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック",sans-serif;
+  --min:var(--jp);
+  --num:var(--jp);
   --wrap:1200px;
   --gut:clamp(16px,4vw,48px);
 }
@@ -51,7 +51,13 @@ p{margin:0}
 /* ヒーロー */
 .hero{position:relative;min-height:min(780px,88svh);display:flex;align-items:flex-end;overflow:hidden;background:var(--bg)}
 .hero .pic{position:absolute;top:0;bottom:0;right:0;width:64%}
-.hero .pic img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;opacity:0;animation:cfade 21s infinite}
+.hero .pic img:nth-child(1){opacity:1;animation-name:cfade1}
+.hero .pic img:nth-child(2){animation-delay:7s}
+.hero .pic img:nth-child(3){animation-delay:14s}
+@keyframes cfade{0%{opacity:0}14%{opacity:1}33%{opacity:1}47%{opacity:0}100%{opacity:0}}
+@keyframes cfade1{0%{opacity:1}33%{opacity:1}47%{opacity:0}86%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.hero .pic img{animation:none!important}.hero .pic img:not(:first-child){display:none}}
 .hero .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(14,14,13,.55) 22%,rgba(14,14,13,0) 50%),linear-gradient(0deg,rgba(14,14,13,.7) 0%,rgba(14,14,13,0) 35%)}
 .hero .wrap{position:relative;z-index:1;width:100%;padding-block:160px 72px}
 .hero .dept{font-size:13px;color:var(--fg-2);letter-spacing:.2em;margin-bottom:26px}
